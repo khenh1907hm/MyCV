@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lê Nguyễn Hoàng Minh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            height: 100%;
+            background: #241d19;
+            color: white;
+            padding: 20px;
+            left: -270px;
+            transition: 0.3s;
+        }
+        .sidebar img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #241d19;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .content {
+            background: #dfd7d3;
+            margin-left: 0;
+            padding: 50px;
+            transition: margin-left 0.3s;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0;
+            }
+            .content {
+                margin-left: 270px;
+            }
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+        <img src="./assets/img/Avatar.jpg" alt="Profile Picture">
+        <a href="#about" onclick="toggleMenu()">About Me</a>
+        <a href="#education" onclick="toggleMenu()">Education</a>
+        <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#experience" onclick="toggleMenu()">Work Experience</a>
+        <a href="#language" onclick="toggleMenu()">Language</a>
+    </div>
+    <div class="content" id="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>During my time at university, I gained experience working with various programming languages, including Java, PHP, and C#...</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Hutech University (2021 - 2025)</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>PHP, Java, C#</li>
+                <li>Basic CodeIgniter, Bootstrap</li>
+                <li>MySQL, SQL Server, MongoDB</li>
+                <li>RESTFUL API, HTML/CSS, JavaScript</li>
+                <li>Git, Laragon, Xampp, VS Code</li>
+                <li>Teamwork, Time Management, Logical Thinking</li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <h3>Nhom Tre An Lanh - Article Management</h3>
+            <p>Developed backend features, designed the database, and implemented the article and message management system.</p>
+            <h3>GasMH - Gas Customer Management</h3>
+            <p>Built CRUD functionality for customer management, designed the database, and optimized queries.</p>
+        </section>
+        <section id="language">
+            <h2>Language</h2>
+            <p>English: Proficient in reading and understanding technical documents.</p>
+        </section>
+    </div>
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-270px";
+                content.style.marginLeft = "0";
+            } else {
+                sidebar.style.left = "0";
+                content.style.marginLeft = "270px";
+            }
+        }
+    </script>
+</body>
+</html>
